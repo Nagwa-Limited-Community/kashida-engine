@@ -1,0 +1,6 @@
+node_modules/
+.vscode
+public/content
+dist/
+build/
+node_modules
