@@ -1,14 +1,8 @@
-import { AddKashidaToText } from "./@types"
+import { addKashidaToText as AddKashidaToText } from "./types"
 import getNumberOfKashidasForMatch from "./getNumberOfKashidasForMatch"
 import { addBackExcludedWords, removeExcludedWords } from "./handleExcludedWords"
 
-/**
-  * Adds the desired amount of Kashida to a text.
-  * @param { String } text The texts to add the Kashida to.
-  * @param { Number } extraKashidaNeeded The amount of Kashida to be added.
-  * @returns { String } The text with the added Kashida.
-  */
-export const addKashidaToText: AddKashidaToText = (text: string, extraKashidaNeeded: number): string => {
+export const addKashidaToText: AddKashidaToText = (text, extraKashidaNeeded) => {
     if (typeof text !== "string" || !text) throw new Error("The text argument provided was not a string or was an empty string")
     if (!extraKashidaNeeded) return text
     const regexForKashidaSlots = addKashidaToText.regexForKashidaSlots || (addKashidaToText.regexForKashidaSlots = /(?=([جحخهعغفقثصضطكمنتلبيسشىئ]{1}[\u064b-\u0652]*[\u0622-\u064a]{1}))/g)
