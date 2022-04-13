@@ -54,7 +54,7 @@ Also, if you're using the [Script tag method](#111-using-script-tag) then the ap
 
    ```HTML
    <body>
-     <script src="/static/js/NagwaHTMLEditor.js"></script>
+     <script src="/static/js/kashida-engine.js"></script>
    </body>
    ```
 
