@@ -29,7 +29,7 @@ These instructions will guide you to consume the API provided by the app.
 ### 1.1. Installation
 
 Following these instructions will integrate the app into your website and will provide a globally defined API to be used.
-Also, if you're using the [Script tag method](#using-script-tag) then the app will automatically add kashidas to the poem lines if the following structure is found in DOM, if not then check the [API interface](#api-interface) to manually invoke the required functions.
+Also, if you're using the [Script tag method](#111-using-script-tag) then the app will automatically add kashidas to the poem lines if the following structure is found in DOM, if not then check the [Documentation](#12-documentation) to manually invoke the required functions.
 
 ```HTML
 <element class="poem">
