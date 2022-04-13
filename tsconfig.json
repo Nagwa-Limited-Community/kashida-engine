@@ -1,9 +1,10 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ES6",
-        "moduleResolution": "Node",
-        "isolatedModules": false,
-        "declaration": true
-    }
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationDir": "./dist/declarations/"
+  }
 }

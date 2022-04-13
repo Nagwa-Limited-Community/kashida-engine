@@ -3,6 +3,27 @@ import extractPoemsFromDOM from "./extractPoemsFromDOM"
 import renderPoemTexts from "./renderPoemTexts"
 import unifyTextsWidths from "./unifyTextsWidths"
 
+/**
+ * Renders all the poem lines after adding kashida to it and unifying all its widths for all the poems available on page.  
+ *  If the arguments were not provided they will fallback to the defaults resulting in expecting the following HTML structure in DOM.
+ *  ``` HTML
+ *  <element class="poem">
+ *    <element class="linesGroup">
+ *      <div>
+ *        <div> [The line should exist here] </div>
+ *      </div>
+ *    </element>
+ *    <element class="linesGroup">
+ *      <div>
+ *        <div> [The line should exist here] </div>
+ *        <div> [The line should exist here] </div>
+ *      </div>
+ *    </element>
+ *  </element>
+ *   ```
+ * @param { String= } [poemSelector =".poem"] The CSS selector used to extract the poems. Default value: `.poem`.
+ * @param { String= } [lineSelector=".linesGroup div div"] The CSS selector used to extract the lines from the poem element. Default value: `.linesGroup div div`.
+ */
 export const renderKashidaToPoems = (poemSelector?: string, lineSelector?: string) => {
     const poems = extractPoemsFromDOM(poemSelector)
     for (const poem of poems) {
