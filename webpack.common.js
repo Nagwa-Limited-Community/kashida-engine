@@ -31,7 +31,7 @@ const rules = [
 const optimization = {
     minimize: true,
     minimizer: [new TerserPlugin({
-        test: /\.min\.js(\?.*)?$/i,
+        test: /\.min\.m?js(\?.*)?$/i,
     })],
 }
 
