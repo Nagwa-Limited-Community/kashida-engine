@@ -39,9 +39,10 @@ export declare interface addKashidaToText {
  * </element>
  * ```
  * @param { HTMLElement } poem The HTML Element containing the poem.
+ * @param { String= } [lineSelector=".linesGroup div div"] The CSS selector used to extract the lines from the poem element. Default value: `.linesGroup div div`.
  * @returns { [HTMLElement[], String[]] } The elements containing the poem lines and the strings of these lines as the following structure `[linesElements, linesTexts]` and both of them are in the same order.
  */
-export declare function extractLinesFromPoem(poem: HTMLElement): [HTMLElement[], string[]]
+export declare function extractLinesFromPoem(poem: HTMLElement, lineSelector?: string): [HTMLElement[], string[]]
 
 /** 
  * Extracts the poems from DOM, expecting any HTML element with the `poem` class like the following structure.
@@ -50,9 +51,10 @@ export declare function extractLinesFromPoem(poem: HTMLElement): [HTMLElement[],
  *  [Poem should exist here]
  * </element>
  * ```
+ * @param { String= } [poemSelector =".poem"] The CSS selector used to extract the poems. Default value: `.poem`.
  * @returns { HTMLElement[] } The elements containing the poems.
  */
-export declare function extractPoemsFromDOM(): HTMLElement[]
+export declare function extractPoemsFromDOM(poemSelector?: string): HTMLElement[]
 
 /**
  * Calculates and returns the number of Kashidas to be added per match.
@@ -89,8 +91,26 @@ export declare function addBackExcludedWords(line: string, exceptionsPlaceholder
 
 /**
  * Renders all the poem lines after adding kashida to it and unifying all its widths for all the poems available on page.  
+ *  If the arguments were not provided they will fallback to the defaults resulting in expecting the following HTML structure in DOM.
+ *  ``` HTML
+ *  <element class="poem">
+ *    <element class="linesGroup">
+ *      <div>
+ *        <div> [The line should exist here] </div>
+ *      </div>
+ *    </element>
+ *    <element class="linesGroup">
+ *      <div>
+ *        <div> [The line should exist here] </div>
+ *        <div> [The line should exist here] </div>
+ *      </div>
+ *    </element>
+ *  </element>
+ *   ```
+ * @param { String= } [poemSelector =".poem"] The CSS selector used to extract the poems. Default value: `.poem`.
+ * @param { String= } [lineSelector=".linesGroup div div"] The CSS selector used to extract the lines from the poem element. Default value: `.linesGroup div div`.
  */
-export declare function renderKashidaToPoems(): void
+export declare function renderKashidaToPoems(poemSelector?: string, lineSelector?: string): void
 
 /**
  * Renders a set of texts to the required poem.
